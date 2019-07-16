@@ -1,0 +1,27 @@
+<div class="container">
+    <form [formGroup]="formG" >
+        <input name="val" type="text" formControlName="input" >
+        <select formControlName="select" name="key">
+            <option ngValue="email">email</option>
+            <option ngValue="phone">phone</option>
+            <option ngValue="name">name</option>
+        </select>
+        <button (click)="onSubmit(formG.value)">Search</button>
+    </form>
+    <div *ngIf="data ; else loadding" class="content">
+        <ul id="listUsers">
+            <li *ngFor="let user of data; let i = index" class="item">
+                <img [src]="'https://picsum.photos/200/300?random=' + i" alt="">
+                <p>{{ user.name }}</p>
+                <p>{{ user.email }}</p>
+                <p>{{ user.phone }}</p>
+            </li>
+
+            <div *ngIf="end" class="end">Out off stock!</div>
+        </ul>
+    </div>
+
+    <ng-template #loadding>
+        <h1 class="text-center">Loadding</h1>
+    </ng-template>
+</div>

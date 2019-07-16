@@ -1,0 +1,10 @@
+.item {
+    background-color: antiquewhite;
+    margin: 10px;
+    list-style-type: decimal;
+    img {
+        width: 150px;
+        height: 150px;
+        clip-path: circle(50%);
+    }
+}
