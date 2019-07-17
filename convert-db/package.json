@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^5.6.4"
+    "events": "^3.0.0",
+    "md5": "^2.2.1",
+    "mongoose": "^5.6.4",
+    "uuid": "^3.3.2",
+    "uuidv4": "^4.0.0"
   }
 }

@@ -2,9 +2,9 @@ const mongoose = require('mongoose')
     , Schema = mongoose.Schema
 
 const bookSchema = new Schema({
-    _id: {
+    id: {
         type: String,
-        required: true,
+        require: true,
         index: true,
     },
     title: {
@@ -17,7 +17,7 @@ const bookSchema = new Schema({
         type: String
     },
     shortContentWords: {
-        type: [String]
+      type: [String]
     },
     content: {
         type: String
@@ -32,10 +32,10 @@ const bookSchema = new Schema({
         type: [String]
     },
     categories: {
-        type: [String]
+        type: [String]  
     },
     tags: {
-        type: [String]
+        type: [String]  
     },
     size: {
         type: Number
@@ -55,6 +55,16 @@ const bookSchema = new Schema({
     formats: {
         type: [String]
     },
+    size:{
+        type:Number
+    },
+    biIsbn:{
+        type:String
+    },
+    biFileUrl:{
+        type:String,
+        require:true
+    },
     status: {
         type: String,
         enum: ['enabled', 'disabled'],
@@ -64,11 +74,28 @@ const bookSchema = new Schema({
     archived: {
         type: Number,
         enum: [0, 1],
-        require: true,
-        default: 0
+        require: true,   
+        default: 0, 
     },
+    bookStatus:{
+        type:String,
+        enum:['activated','unactivated'],
+        require:true,
+        default:'activated'
+    },
+    source:{
+        type:[String]
+    },
+    createdAt: {
+        type: Date, 
+        default: Date.now
+    },
+    updatedAt: {
+        type: Date, 
+        default: Date.now
+    }
 })
 
-bookSchema.index({ categories: 1, tags: 1 });
+bookSchema.index({ categories: 1}, {tags: 1 });
 
-module.exports =  mongoose.model('book', bookSchema)
+module.exports = mongoose.model('books', bookSchema)

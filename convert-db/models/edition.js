@@ -1,27 +1,49 @@
 const mongoose = require('mongoose')
     , Schema = mongoose.Schema
 
-const bookSchema = new Schema({
-
-    id: Schema.Types.ObjectId,
-    edition: {
+const editionSchema = new Schema({
+    id: {
         type: String,
-        required: [true, 'missing edition']
+        require: true,
+        index: true,
     },
-    collector: {
+    title:{
         type: String,
-        required: [true, 'missing collector']
+        require:[true, 'missing title']
+    },
+    link:{
+        type:String,
+        require: [true,'missing link']
+    },
+    excerpt:{
+        type:String,
+        require:[true,'missing excerpt']
+    },
+    writers: {
+        type: String,
+        require: [true, 'missing writers']
     },
     publisher: {
         type: String,
-        required:[true, 'missing publisher']
+        require:[true, 'missing publisher']
     },
     type: {
         type: String,
-        required: [true, 'missing type']
+        require: [true, 'missing type']
     },
+    date:{
+        type:String,
+        require:[true, 'missing']
+    },
+    createdAt: {
+        type: Date, 
+        default: Date.now
+    },
+    updatedAt: {
+        type: Date, 
+        default: Date.now
+    }
    
-}, 
-{ timestamps: { createdAt: 'createdAt', updatedAt: 'updateAt' }})
-
-module.exports = mongoose.model('editions', bookSchema)
+})
+editionSchema.index({ type: 1 });
+module.exports = mongoose.model('editions', editionSchema)

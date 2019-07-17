@@ -23,12 +23,6 @@ const authorSchema = new Schema({
         type: String,
         required:[true, 'missing last name']
     },
-    status: {
-        type: String,
-        enum: ['alive', 'dead'],
-        require: true,
-        default: 'alive',
-    },
     createdAt: {
         type: Date, 
         default: Date.now

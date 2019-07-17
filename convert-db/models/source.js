@@ -1,9 +1,12 @@
 const mongoose = require('mongoose')
     , Schema = mongoose.Schema
 
-const bookSchema = new Schema({
-
-    id: String,
+const sourceSchema = new Schema({
+    id: {
+        type: String,
+        required: true,
+        index: true,
+    },
     site: {
         type: String,
         required:[true,'missing site']
@@ -12,17 +15,15 @@ const bookSchema = new Schema({
         type: String,
         required: [true, 'missing link']
     },
-    status:{
-        type: Boolean
-    },
+  
     createdAt: {
-        type: Date,
+        type: Date, 
         default: Date.now
     },
     updatedAt: {
-        type: Date,
+        type: Date, 
         default: Date.now
     }
 })
-
-module.exports = mongoose.model('sources', bookSchema)
+sourceSchema.index({ site: 1});
+module.exports = mongoose.model('sources', sourceSchema)

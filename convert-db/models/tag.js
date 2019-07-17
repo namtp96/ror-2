@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const tagSchema = new Schema({
 
-    _id: {
+    id: {
         type: String,
         required: true,
         index: true,

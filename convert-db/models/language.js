@@ -1,24 +1,40 @@
 const mongoose = require('mongoose')
     , Schema = mongoose.Schema
 
-const bookSchema = new Schema({
-    id: String,
+const languageSchema = new Schema({
+    id: {
+        type: String,
+        required: true,
+        index: true,
+    },
     language: {
         type: String,
         required: [true, 'missing language']
     },
-    country: {
-        type: String,
-        required:[true, 'missing country']
+    a2Code:{
+        type:String,
+        required:[true,'missing  alpha 2 code']
+    },
+    a3Code:{
+        type:String,
+        required:[true,'missing  alpha 3 code']
+    },
+    numCode:{
+        type:Number,
+        required:[true,'missing number code']
+    },
+    phoneCode:{
+        type:Number,
+        required:[true,'missing phone code']
     },
     createdAt: {
-        type: Date,
+        type: Date, 
         default: Date.now
-    }, 
+    },
     updatedAt: {
-        type: Date,
+        type: Date, 
         default: Date.now
     }
 })
-
-module.exports = mongoose.model('languages', bookSchema)
+languageSchema.index({ language: 1});
+module.exports = mongoose.model('languages', languageSchema);

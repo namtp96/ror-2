@@ -1,0 +1,8 @@
+{"language" : "English", "a2Code" : "GB", "a3Code" : "GBR", "numCode" : 826, "phoneCode" : 44}
+{"language" : "Russian", "a2Code" : "RU", "a3Code" : "RUS", "numCode" : 643, "phoneCode" : 7}
+{"language" : "Italian", "a2Code" : "IT", "a3Code" : "ITA", "numCode" : 380, "phoneCode" : 39}
+{"language" : "German", "a2Code" : "DE", "a3Code" : "DEU", "numCode" : 276, "phoneCode" : 49}
+{"language" : "French", "a2Code" : "FR", "a3Code" : "FRA", "numCode" : 250, "phoneCode" : 33}
+{"language" : "Spanish", "a2Code" : "ES", "a3Code" : "ESP", "numCode" : 724, "phoneCode" : 34}
+{"language" : "Japanese", "a2Code" : "JP", "a3Code" : "JPN", "numCode" : 392, "phoneCode" : 81}
+{"language" : "Other", "a2Code" : "Other", "a3Code" : "Other", "numCode" : 0, "phoneCode" : 0}
