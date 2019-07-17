@@ -7,7 +7,7 @@ module.exports = {
 
     //database config
     db: {
-        url: 'mongodb://localhost:27017/ror',
+        url: 'mongodb+srv://nam:clay71715@ror-v0rxn.mongodb.net/test?retryWrites=true&w=majority',
         options: { useNewUrlParser: true, poolSize: 300 }
     },
 

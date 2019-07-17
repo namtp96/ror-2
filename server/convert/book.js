@@ -1,6 +1,6 @@
 var MongoClient = require('mongodb').MongoClient
 var url = "mongodb://localhost:27017"
-const Book = require('../book')
+const Book = require('../models/book')
 const mongoose = require('mongoose')
 
 MongoClient.connect(url, { useNewUrlPaser: true, poolSize: 300 }, function (err, db) {
